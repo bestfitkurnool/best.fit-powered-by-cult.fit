@@ -63,7 +63,7 @@
     <header class="header">
         <div class="container header-container">
             <a class="brand-lockup" href="#top" aria-label="best.fit Kurnool home">
-                <span class="best-wordmark">best<span>.fit</span></span>
+                <img class="bestfit-logo-img" src="assets/bestfit-logo.png" alt="best.fit">
                 <span class="brand-separator"></span>
                 <span class="powered-lockup">
                     <span>Powered by</span>
@@ -90,7 +90,7 @@
             <div class="container hero-grid">
                 <div class="hero-copy">
                     <div class="hero-logos" aria-label="best.fit powered by cult.fit">
-                        <span class="best-wordmark large">best<span>.fit</span></span>
+                        <img class="bestfit-logo-img large" src="assets/bestfit-logo.png" alt="best.fit">
                         <span class="brand-separator"></span>
                         <span class="powered-lockup large">
                             <span>Powered by</span>
@@ -193,6 +193,11 @@
                             <span class="error-msg" id="phoneError">Please enter a valid 10-digit phone number</span>
                         </div>
                         <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="Enter your email address" required autocomplete="email">
+                            <span class="error-msg" id="emailError">Please enter a valid email</span>
+                        </div>
+                        <div class="form-group">
                             <label for="goal">Fitness Goal</label>
                             <select id="goal" required>
                                 <option value="" disabled selected>Select your goal</option>
@@ -241,7 +246,7 @@
     <footer class="footer">
         <div class="container footer-container">
             <div class="brand-lockup footer-brand">
-                <span class="best-wordmark">best<span>.fit</span></span>
+                <img class="bestfit-logo-img" src="assets/bestfit-logo.png" alt="best.fit">
                 <span class="brand-separator"></span>
                 <span class="powered-lockup">
                     <span>Powered by</span>
@@ -265,7 +270,7 @@
             </div>
             <h2>Founder Membership Reserved!</h2>
             <p>Thank you for pre-registering. Your <strong>40% Founder Membership offer</strong> request has been received.</p>
-            <p class="modal-info">A membership manager will call you at <strong id="modalPhone"></strong> shortly.</p>
+            <p class="modal-info">A membership manager will call you at <strong id="modalPhone"></strong> or email <strong id="modalEmail"></strong> shortly.</p>
             <button class="btn btn-primary" id="closeModalBtn">Got it, Thanks!</button>
         </div>
     </div>

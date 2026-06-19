@@ -52,6 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
             errorEl: document.getElementById('nameError'),
             validate: (val) => val.trim().length >= 2
         },
+        email: {
+            el: document.getElementById('email'),
+            errorEl: document.getElementById('emailError'),
+            validate: (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim())
+        },
         phone: {
             el: document.getElementById('phone'),
             errorEl: document.getElementById('phoneError'),
@@ -121,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const leadData = {
                 name: inputs.name.el.value.trim(),
-                email: '',
+                email: inputs.email.el.value.trim(),
                 phone: inputs.phone.el.value.trim(),
                 goal: inputs.goal.el.value,
                 timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
@@ -129,6 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const handleSuccess = (data) => {
                 document.getElementById('modalPhone').textContent = `+91 ${data.phone}`;
+                document.getElementById('modalEmail').textContent = data.email;
                 leadForm.reset();
                 successModal.classList.add('active');
                 submitBtn.disabled = false;

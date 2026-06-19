@@ -172,21 +172,14 @@ button, input, select {
     gap: 12px;
 }
 
-.best-wordmark {
-    color: #ffffff;
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    font-weight: 900;
-    letter-spacing: 0;
-    line-height: 1;
+.bestfit-logo-img {
+    height: 34px;
+    object-fit: contain;
+    width: auto;
 }
 
-.best-wordmark span {
-    color: var(--accent-orange);
-}
-
-.best-wordmark.large {
-    font-size: clamp(2.1rem, 5vw, 3.8rem);
+.bestfit-logo-img.large {
+    height: clamp(48px, 8vw, 74px);
 }
 
 .brand-separator {
@@ -821,8 +814,14 @@ button, input, select {
         gap: 8px;
     }
 
-    .best-wordmark {
-        font-size: 1.35rem;
+    .bestfit-logo-img {
+        height: 28px;
+        max-width: 116px;
+    }
+
+    .bestfit-logo-img.large {
+        height: 44px;
+        max-width: 190px;
     }
 
     .brand-separator {
