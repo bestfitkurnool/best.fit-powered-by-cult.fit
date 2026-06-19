@@ -710,6 +710,23 @@ button, input, select {
     font-size: 0.9rem;
 }
 
+.footer-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    justify-content: center;
+}
+
+.footer-contact a {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.footer-contact a:hover {
+    color: #ffffff;
+}
+
 .footer-credit {
     color: #ffffff !important;
     font-family: var(--font-heading);
