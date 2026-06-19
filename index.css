@@ -172,14 +172,21 @@ button, input, select {
     gap: 12px;
 }
 
-.bestfit-logo-img {
-    height: 34px;
-    object-fit: contain;
-    width: auto;
+.best-wordmark {
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: 1;
 }
 
-.bestfit-logo-img.large {
-    height: clamp(48px, 8vw, 74px);
+.best-wordmark span {
+    color: var(--accent-orange);
+}
+
+.best-wordmark.large {
+    font-size: clamp(2.1rem, 5vw, 3.8rem);
 }
 
 .brand-separator {
@@ -282,11 +289,11 @@ button, input, select {
 
 .hero h1 {
     font-family: var(--font-heading);
-    font-size: clamp(2.7rem, 6.3vw, 5.9rem);
+    font-size: clamp(2.25rem, 5vw, 4.35rem);
     font-weight: 900;
     letter-spacing: 0;
-    line-height: 0.98;
-    max-width: 850px;
+    line-height: 1.03;
+    max-width: 760px;
 }
 
 .hero-subtitle {
@@ -814,14 +821,17 @@ button, input, select {
         gap: 8px;
     }
 
-    .bestfit-logo-img {
-        height: 28px;
-        max-width: 116px;
+    .best-wordmark {
+        font-size: 1.35rem;
     }
 
-    .bestfit-logo-img.large {
-        height: 44px;
-        max-width: 190px;
+    .best-wordmark.large {
+        font-size: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.45rem;
+        line-height: 1.05;
     }
 
     .brand-separator {
