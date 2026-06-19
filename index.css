@@ -636,6 +636,38 @@ button, input, select {
     margin-bottom: 24px;
 }
 
+.hours-block {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-sm);
+    margin-bottom: 24px;
+    padding: 16px;
+}
+
+.hours-block h4 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.hours-block p {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 0;
+    padding: 8px 0;
+}
+
+.hours-block p + p {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hours-block strong {
+    color: #ffffff;
+    white-space: nowrap;
+}
+
 .location-actions {
     display: flex;
     flex-wrap: wrap;
