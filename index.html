@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="best.fit powered by cult.fit - Coming soon to Kurnool! Premium gym with expert trainers, group workouts, yoga, and personalized training. Pre-register for early bird discounts.">
+    <title>best.fit | Powered by cult.fit - Kurnool</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="index.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none'%3E%3Cpath d='M50 5 V15' stroke='%23ff2a5f' stroke-width='8' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='30' r='10' stroke='%23ffffff' stroke-width='8'/%3E%3Cpath d='M32 19 L21 27' stroke='%23ffffff' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M68 19 L79 27' stroke='%23ffffff' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M14 49 H86' stroke='%23ffffff' stroke-width='9' stroke-linecap='round'/%3E%3Cpath d='M30 63 L18 71' stroke='%2300d8ff' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M70 63 L82 71' stroke='%23ffb703' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M35 84 L50 63 L65 84' stroke='%23ffffff' stroke-width='9' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M50 78 V87' stroke='%23ffffff' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-best-group">
+                    <svg class="best-logo-svg" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 24 H35" stroke="#00d8ff" stroke-width="6" stroke-linecap="round"/>
+                        <path d="M5 40 H30" stroke="#ffb703" stroke-width="6" stroke-linecap="round"/>
+                        <path d="M12 56 H28" stroke="#ff2a5f" stroke-width="6" stroke-linecap="round"/>
+                        <circle cx="68" cy="22" r="5" fill="#00d8ff"/>
+                        <path d="M68 27 L60 44" stroke="#00d8ff" stroke-width="6" stroke-linecap="round"/>
+                        <path d="M62 34 L50 36 L44 28" stroke="#00d8ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M62 34 L72 32 L80 42" stroke="#00d8ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M60 44 L48 50 L44 65" stroke="#00d8ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M60 44 L70 54 L62 69" stroke="#00d8ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="logo-best">best<span>.fit</span></span>
+                </div>
+                <span class="logo-divider">|</span>
+                <div class="logo-cult-group">
+                    <span class="logo-cult-powered">Powered by</span>
+                    <svg class="cult-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 5 V15" stroke="#ff2a5f" stroke-width="8" stroke-linecap="round"/>
+                        <circle cx="50" cy="30" r="10" stroke="currentColor" stroke-width="8"/>
+                        <path d="M32 19 L21 27" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+                        <path d="M68 19 L79 27" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+                        <path d="M14 49 H86" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+                        <path d="M30 63 L18 71" stroke="#00d8ff" stroke-width="8" stroke-linecap="round"/>
+                        <path d="M70 63 L82 71" stroke="#ffb703" stroke-width="8" stroke-linecap="round"/>
+                        <path d="M35 84 L50 63 L65 84" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M50 78 V87" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+                    </svg>
+                    <span class="logo-cult">cult.fit</span>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="#features">Features</a>
+                <a href="#location">Location</a>
+                <a href="#register" class="btn btn-primary btn-sm">Pre-Register</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="tagline">YOUR FITNESS JOURNEY STARTS HERE</div>
+                <h1 class="hero-title">FIRST TIME IN <br><span class="text-gradient">KURNOOL</span></h1>
+                <p class="hero-subtitle">The ultimate fitness experience is arriving soon. best.fit powered by cult.fit brings world-class trainers, state-of-the-art equipment, and signature group workouts right to your neighborhood.</p>
+                
+                <!-- Countdown Timer -->
+                <div class="countdown-container">
+                    <p class="countdown-title">PRE-LAUNCH OFFER ENDS IN</p>
+                    <div class="countdown" id="countdown">
+                        <div class="countdown-item">
+                            <span class="countdown-num" id="days">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-num" id="hours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-num" id="minutes">00</span>
+                            <span class="countdown-label">Mins</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-num" id="seconds">00</span>
+                            <span class="countdown-label">Secs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#register" class="btn btn-primary btn-lg">Secure Early Bird Discount</a>
+                    <a href="#features" class="btn btn-secondary btn-lg">Explore Offerings</a>
+                </div>
+            </div>
+            
+            <!-- Graphic / Promo Card -->
+            <div class="hero-card-wrapper">
+                <div class="hero-card">
+                    <div class="card-badge">LAUNCHING SOON</div>
+                    <div class="card-content">
+                        <h3>Foundation Membership</h3>
+                        <p class="card-discount">Flat 40% OFF</p>
+                        <p class="card-terms">For the first 100 members only. Register today to lock in the special pricing.</p>
+                        <ul class="card-perks">
+                            <li>
+                                <svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Unlimited Gym Access
+                            </li>
+                            <li>
+                                <svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                2 Free Personal Training Sessions
+                            </li>
+                            <li>
+                                <svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Access to all Group Workouts
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">WHY CHOOSE <span class="text-gradient">BEST.FIT</span>?</h2>
+                <p class="section-subtitle">We combine premium workout spaces with tech-led training methodologies to deliver real fitness results.</p>
+            </div>
+            
+            <div class="features-grid">
+                <!-- Feature 1: Expert Trainers -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                            <line x1="6" y1="1" x2="6" y2="4"></line>
+                            <line x1="10" y1="1" x2="10" y2="4"></line>
+                            <line x1="14" y1="1" x2="14" y2="4"></line>
+                        </svg>
+                    </div>
+                    <h3>Expert Trainers</h3>
+                    <p>Certified fitness coaches dedicated to designing programs customized to your body type and performance goals.</p>
+                </div>
+
+                <!-- Feature 2: Group Workouts -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3>Group Workouts</h3>
+                    <p>High-energy group classes including HRX, Strength+Conditioning, Dance Fitness, and Cardio Burn.</p>
+                </div>
+
+                <!-- Feature 3: Personalized Training -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <h3>Personalized Training</h3>
+                    <p>One-on-one attention with highly customized workout schedules, progress tracking, and form corrections.</p>
+                </div>
+
+                <!-- Feature 4: Yoga & Mindfulness -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                            <path d="M12 6v12"></path>
+                            <path d="M8 10c0-2 2-2 2-2s2 0 2 2-2 2-2 2H8"></path>
+                            <path d="M16 14c0 2-2 2-2 2s-2 0-2-2 2-2 2-2h2"></path>
+                        </svg>
+                    </div>
+                    <h3>Yoga & Mindfulness</h3>
+                    <p>Rejuvenating yoga sessions and guided mindfulness routines to align your mind, body, and spiritual health.</p>
+                </div>
+
+                <!-- Feature 5: Nutrition Support -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v20"></path>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                    <h3>Nutrition Support</h3>
+                    <p>Customized diet charts and nutritional counselling that perfectly complement your physical workout regimes.</p>
+                </div>
+
+                <!-- Feature 6: State-of-the-Art Gear -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="6" y1="3" x2="6" y2="21"></line>
+                            <line x1="18" y1="3" x2="18" y2="21"></line>
+                            <line x1="6" y1="12" x2="18" y2="12"></line>
+                            <line x1="6" y1="7" x2="18" y2="7"></line>
+                            <line x1="6" y1="17" x2="18" y2="17"></line>
+                        </svg>
+                    </div>
+                    <h3>Premium Equipment</h3>
+                    <p>Fully equipped space with top-tier cardio machines, extensive free-weight zones, and clean amenities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Register/Lead Capture Section -->
+    <section id="register" class="register">
+        <div class="register-bg-glow"></div>
+        <div class="container">
+            <div class="register-grid">
+                <div class="register-info">
+                    <h2>LOCK IN YOUR <br><span class="text-gradient">EARLY ACCESS</span></h2>
+                    <p>Be the first to experience Kurnool's most premium fitness club. Fill in your details, and our relationship manager will contact you with exclusive pre-launch packages, membership pricing, and booking links.</p>
+                    
+                    <div class="contact-badges">
+                        <div class="badge-item">
+                            <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                            <span>@bestfit.kurnool</span>
+                        </div>
+                        <div class="badge-item">
+                            <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <span>+91 98765 43210</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="register-form-wrapper">
+                    <form id="leadForm" class="register-form" novalidate>
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" placeholder="Enter your full name" required autocomplete="name">
+                            <span class="error-msg" id="nameError">Name is required</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="Enter your email address" required autocomplete="email">
+                            <span class="error-msg" id="emailError">Please enter a valid email</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <div class="phone-input-wrapper">
+                                <span class="phone-prefix">+91</span>
+                                <input type="tel" id="phone" placeholder="10-digit mobile number" required autocomplete="tel" maxlength="10">
+                            </div>
+                            <span class="error-msg" id="phoneError">Please enter a valid 10-digit phone number</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="goal">Primary Fitness Goal</label>
+                            <select id="goal" required>
+                                <option value="" disabled selected>Select your goal</option>
+                                <option value="weight-loss">Weight Loss / Fat Burn</option>
+                                <option value="muscle-gain">Muscle Gain / Strength</option>
+                                <option value="flexibility">Flexibility & Core (Yoga)</option>
+                                <option value="general-fitness">General Fitness / Cardio</option>
+                            </select>
+                            <span class="error-msg" id="goalError">Please select a fitness goal</span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+                            <span>Claim 40% Off Pre-Register Spot</span>
+                            <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="location" class="location">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">FIND US AT <span class="text-gradient">KURNOOL</span></h2>
+                <p class="section-subtitle">Conveniently situated in the heart of Kurnool city with ample parking space.</p>
+            </div>
+
+            <div class="location-grid">
+                <!-- Location Details Card -->
+                <div class="location-details">
+                    <div class="location-info-card">
+                        <div class="address-header">
+                            <div class="address-marker">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <h3>Gym Location</h3>
+                        </div>
+                        <p class="address-text">
+                            <strong>best.fit powered by cult.fit</strong><br>
+                            5th Floor, Icon Shoppe,<br>
+                            Shilpa Birla Compound,<br>
+                            Behind Walmart,<br>
+                            Kurnool, Andhra Pradesh - 518002, India
+                        </p>
+                        <button class="btn btn-secondary btn-sm" id="copyAddressBtn">
+                            <svg class="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span id="copyText">Copy Address</span>
+                        </button>
+                    </div>
+
+                    <div class="hours-card">
+                        <h3>Opening Hours (Upcoming)</h3>
+                        <ul class="hours-list">
+                            <li><span>Monday - Saturday</span> <span>5:00 AM - 10:00 PM</span></li>
+                            <li><span>Sunday</span> <span>6:00 AM - 12:00 PM</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Map Frame -->
+                <div class="map-container">
+                    <!-- Google Maps Embed for Shilpa Birla Compound Kurnool -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3847.6685816997424!2d78.0264147758368!3d15.821360646197258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5e3b6a22aa021%3A0xe54e3cb413998b3f!2sBirla%20Compound%2C%20Kurnool%2C%20Andhra%20Pradesh%20518002!5e0!3m2!1sen!2sin!4v1718912345678!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <div class="logo-best-group">
+                    <svg class="best-logo-svg" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 24 H35" stroke="#00d8ff" stroke-width="6" stroke-linecap="round"/>
+                        <path d="M5 40 H30" stroke="#ffb703" stroke-width="6" stroke-linecap="round"/>
+                        <path d="M12 56 H28" stroke="#ff2a5f" stroke-width="6" stroke-linecap="round"/>
+                        <circle cx="68" cy="22" r="5" fill="#00d8ff"/>
+                        <path d="M68 27 L60 44" stroke="#00d8ff" stroke-width="6" stroke-linecap="round"/>
+                        <path d="M62 34 L50 36 L44 28" stroke="#00d8ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M62 34 L72 32 L80 42" stroke="#00d8ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M60 44 L48 50 L44 65" stroke="#00d8ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M60 44 L70 54 L62 69" stroke="#00d8ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="logo-best">best<span>.fit</span></span>
+                </div>
+                <span class="logo-divider">|</span>
+                <div class="logo-cult-group">
+                    <span class="logo-cult-powered">Powered by</span>
+                    <svg class="cult-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 5 V15" stroke="#ff2a5f" stroke-width="8" stroke-linecap="round"/>
+                        <circle cx="50" cy="30" r="10" stroke="currentColor" stroke-width="8"/>
+                        <path d="M32 19 L21 27" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+                        <path d="M68 19 L79 27" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+                        <path d="M14 49 H86" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+                        <path d="M30 63 L18 71" stroke="#00d8ff" stroke-width="8" stroke-linecap="round"/>
+                        <path d="M70 63 L82 71" stroke="#ffb703" stroke-width="8" stroke-linecap="round"/>
+                        <path d="M35 84 L50 63 L65 84" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M50 78 V87" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+                    </svg>
+                    <span class="logo-cult">cult.fit</span>
+                </div>
+            </div>
+            <p class="footer-copy">&copy; 2026 best.fit Gym Kurnool. Powered by cult.fit. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            <h2>Registration Successful!</h2>
+            <p>Thank you for pre-registering. Your <strong>40% OFF Early Bird Discount</strong> has been locked in.</p>
+            <p class="modal-info">A gym membership manager will call you at <strong id="modalPhone"></strong> or email you at <strong id="modalEmail"></strong> shortly with your exclusive voucher code.</p>
+            <button class="btn btn-primary" id="closeModalBtn">Got it, Thanks!</button>
+        </div>
+    </div>
+
+    <!-- Script File -->
+    <script src="app.js"></script>
+</body>
+</html>
