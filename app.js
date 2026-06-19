@@ -4,7 +4,8 @@
 // Follow the instructions in README.md to set this up.
 // Example: 'https://script.google.com/macros/s/AKfycbz.../exec'
 // ==========================================================================
-const GOOGLE_SCRIPT_URL = '';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzLqeX_mCTlFqE1hSBXPyKOLYYO1WSZZqf2F-fkYdLQHgKJvcPlnZU4T1dxmaFKrHKt/exec';
+const isGoogleSheetsConfigured = () => /^https:\/\/script\.google\.com\/macros\/s\/[^/]+\/exec$/.test(GOOGLE_SCRIPT_URL.trim());
 
 document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
@@ -43,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const successModal = document.getElementById('successModal');
     const closeModalBtn = document.getElementById('closeModalBtn');
     const submitBtn = document.getElementById('submitBtn');
+    const formStatus = document.getElementById('formStatus');
     
     const inputs = {
         name: {
@@ -80,9 +82,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    const setFormStatus = (message, type = 'error') => {
+        formStatus.textContent = message;
+        formStatus.className = `form-status ${type}`;
+        formStatus.hidden = false;
+    };
+
+    const clearFormStatus = () => {
+        formStatus.textContent = '';
+        formStatus.hidden = true;
+    };
+
     // Form Submission Handler
-    leadForm.addEventListener('submit', (e) => {
+    leadForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+        clearFormStatus();
         
         let isFormValid = true;
 
@@ -134,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             // Submit to Google Sheets via Google Apps Script
-            if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL.trim() !== '') {
+            if (isGoogleSheetsConfigured()) {
                 // Build URL with query parameters (most reliable method for Apps Script)
                 const params = new URLSearchParams({
                     name: leadData.name,
@@ -144,22 +158,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 const url = GOOGLE_SCRIPT_URL + '?' + params.toString();
 
-                fetch(url, { method: 'GET', mode: 'no-cors' })
-                    .then(() => {
-                        saveLocal(leadData);
-                        handleSuccess(leadData);
-                    })
-                    .catch(err => {
-                        console.error('Google Sheet submission error:', err);
-                        saveLocal(leadData);
-                        handleSuccess(leadData);
-                    });
-            } else {
-                // No Google Script URL configured — save locally only
-                setTimeout(() => {
+                try {
+                    await fetch(url, { method: 'GET', mode: 'no-cors' });
                     saveLocal(leadData);
                     handleSuccess(leadData);
-                }, 1200);
+                } catch (err) {
+                    console.error('Google Sheet submission error:', err);
+                    saveLocal(leadData);
+                    setFormStatus('We could not reach Google Sheets. Your details were saved locally as backup. Please try again in a moment.');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+                }
+            } else {
+                // No Google Script URL configured — save locally only
+                console.error('Google Sheets is not configured. Add your Apps Script Web App URL to GOOGLE_SCRIPT_URL in app.js.');
+                saveLocal(leadData);
+                setFormStatus('Google Sheets is not connected yet. Add your Apps Script Web App URL in app.js, then submit again.');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
             }
         }
     });

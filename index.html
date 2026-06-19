@@ -12,7 +12,7 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="index.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none'%3E%3Cpath d='M50 2 L50 14' stroke='%23e91e63' stroke-width='7' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='26' r='8' stroke='%23fff' stroke-width='6' fill='none'/%3E%3Cpath d='M37 22 L26 12' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M63 22 L74 12' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M12 48 L88 48' stroke='%23fff' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M30 60 L18 70' stroke='%2300bcd4' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M70 60 L82 70' stroke='%23ffc107' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M36 90 L50 65 L64 90' stroke='%23fff' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/png" href="assets/cultfit-icon.png">
 </head>
 <body>
     <!-- Header -->
@@ -36,24 +36,7 @@
                 <span class="logo-divider">|</span>
                 <div class="logo-cult-group">
                     <span class="logo-cult-powered">Powered by</span>
-                    <svg class="cult-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Top pink dash -->
-                        <path d="M50 2 L50 14" stroke="#e91e63" stroke-width="7" stroke-linecap="round"/>
-                        <!-- Head circle (ring) -->
-                        <circle cx="50" cy="26" r="8" stroke="currentColor" stroke-width="6" fill="none"/>
-                        <!-- Upper-left ray (pointing UP-LEFT) -->
-                        <path d="M37 22 L26 12" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-                        <!-- Upper-right ray (pointing UP-RIGHT) -->
-                        <path d="M63 22 L74 12" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-                        <!-- Horizontal bar (arms) -->
-                        <path d="M12 48 L88 48" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
-                        <!-- Lower-left ray (CYAN/BLUE, pointing DOWN-LEFT) -->
-                        <path d="M30 60 L18 70" stroke="#00bcd4" stroke-width="6" stroke-linecap="round"/>
-                        <!-- Lower-right ray (YELLOW, pointing DOWN-RIGHT) -->
-                        <path d="M70 60 L82 70" stroke="#ffc107" stroke-width="6" stroke-linecap="round"/>
-                        <!-- Legs (upward chevron / inverted V) -->
-                        <path d="M36 90 L50 65 L64 90" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                    </svg>
+                    <img class="cult-logo-img" src="assets/cultfit-icon.png" alt="cult.fit icon">
                     <span class="logo-cult">cult.fit</span>
                 </div>
             </div>
@@ -300,6 +283,7 @@
                                 <polyline points="12 5 19 12 12 19"></polyline>
                             </svg>
                         </button>
+                        <p class="form-status" id="formStatus" hidden></p>
                     </form>
                 </div>
             </div>
@@ -356,7 +340,7 @@
                 <div class="map-container">
                     <!-- Google Maps Embed for Shilpa Birla Compound Kurnool -->
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3847.6685816997424!2d78.0264147758368!3d15.821360646197258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5e3b6a22aa021%3A0xe54e3cb413998b3f!2sBirla%20Compound%2C%20Kurnool%2C%20Andhra%20Pradesh%20518002!5e0!3m2!1sen!2sin!4v1718912345678!5m2!1sen!2sin" 
+                        src="https://maps.google.com/maps?q=15.8085940,78.0389072&z=17&output=embed" 
                         width="100%" 
                         height="400" 
                         style="border:0;" 
@@ -390,20 +374,12 @@
                 <span class="logo-divider">|</span>
                 <div class="logo-cult-group">
                     <span class="logo-cult-powered">Powered by</span>
-                    <svg class="cult-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M50 2 L50 14" stroke="#e91e63" stroke-width="7" stroke-linecap="round"/>
-                        <circle cx="50" cy="26" r="8" stroke="currentColor" stroke-width="6" fill="none"/>
-                        <path d="M37 22 L26 12" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-                        <path d="M63 22 L74 12" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-                        <path d="M12 48 L88 48" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
-                        <path d="M30 60 L18 70" stroke="#00bcd4" stroke-width="6" stroke-linecap="round"/>
-                        <path d="M70 60 L82 70" stroke="#ffc107" stroke-width="6" stroke-linecap="round"/>
-                        <path d="M36 90 L50 65 L64 90" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                    </svg>
+                    <img class="cult-logo-img" src="assets/cultfit-icon.png" alt="cult.fit icon">
                     <span class="logo-cult">cult.fit</span>
                 </div>
             </div>
             <p class="footer-copy">&copy; 2026 best.fit Gym Kurnool. Powered by cult.fit. All rights reserved.</p>
+            <p class="footer-credit">Developed by VPD Technologies</p>
         </div>
     </footer>
 

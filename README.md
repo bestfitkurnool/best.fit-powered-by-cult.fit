@@ -81,22 +81,36 @@ Follow these 5 simple steps to set it up:
 ### Step 2: Open Extensions -> Apps Script
 1. In your new Google Sheet, click **Extensions** in the top menu and select **Apps Script**.
 2. Delete any default code in the editor.
-3. Copy and paste the following Google Apps Script code into the script editor:
+3. Copy and paste the code from [google-apps-script.js](file:///c:/Users/ABC/Desktop/best-fit/google-apps-script.js), or use this same code:
 
 ```javascript
+const SPREADSHEET_ID = '1kyF4HlA2XDigjBJcf7Mmd5yZh2b3H04BST7-6gZxgwM';
+
 function doGet(e) {
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const sheet = SpreadsheetApp.openById(SPREADSHEET_ID).getActiveSheet();
+  const data = e.parameter || {};
+  const headers = ['Timestamp', 'Name', 'Email', 'Phone', 'Goal'];
 
-  var name  = e.parameter.name  || '';
-  var email = e.parameter.email || '';
-  var phone = e.parameter.phone || '';
-  var goal  = e.parameter.goal  || '';
+  const firstRow = sheet.getRange(1, 1, 1, headers.length).getValues()[0];
+  const hasHeaders = headers.every((header, index) => firstRow[index] === header);
 
-  sheet.appendRow([new Date(), name, email, phone, goal]);
+  if (!hasHeaders) {
+    sheet.insertRowBefore(1);
+    sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+    sheet.getRange(1, 1, 1, headers.length).setFontWeight('bold');
+  }
 
-  return ContentService.createTextOutput(
-    JSON.stringify({ status: 'success' })
-  ).setMimeType(ContentService.MimeType.JSON);
+  sheet.appendRow([
+    new Date(),
+    data.name || '',
+    data.email || '',
+    data.phone || '',
+    data.goal || ''
+  ]);
+
+  return ContentService
+    .createTextOutput(JSON.stringify({ status: 'success' }))
+    .setMimeType(ContentService.MimeType.JSON);
 }
 ```
 
@@ -109,7 +123,7 @@ function doGet(e) {
    - **Who has access**: **Anyone** (this is critical so the website form can submit data without prompting the user to log in).
 4. Click **Deploy**.
 5. Google will ask you to authorize access. Click **Authorize access**, choose your account, click **Advanced** at the bottom of the prompt, and select **Go to Untitled project (unsafe)** to approve the permissions.
-6. Once deployed, copy the **Web app URL** (it will end in `/exec`).
+6. Once deployed, copy the **Web app URL**. It must look like `https://script.google.com/macros/s/.../exec`.
 
 ### Step 4: Add the URL to `app.js`
 1. Open the [app.js](file:///c:/Users/ABC/Desktop/best-fit/app.js) file in your editor.
@@ -117,7 +131,7 @@ function doGet(e) {
    ```javascript
    const GOOGLE_SCRIPT_URL = '';
    ```
-3. Paste your Web App URL between the single quotes. For example:
+3. Paste your Web App URL between the single quotes. Do not paste the Google Sheet URL here; it must be the Apps Script `/exec` URL. For example:
    ```javascript
    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzEXAMPLE-URL-xyz/exec';
    ```

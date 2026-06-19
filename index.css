@@ -196,7 +196,7 @@ h1, h2, h3, h4 {
 .logo {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 14px;
 }
 
 .logo-best-group, .logo-cult-group {
@@ -211,9 +211,12 @@ h1, h2, h3, h4 {
     flex-shrink: 0;
 }
 
-.cult-logo-svg {
+.cult-logo-img {
+    width: 28px;
     height: 28px;
-    width: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 6px;
     flex-shrink: 0;
 }
 
@@ -237,17 +240,18 @@ h1, h2, h3, h4 {
 
 .logo-cult-powered {
     font-family: var(--font-heading);
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     font-weight: 500;
     color: var(--text-secondary);
 }
 
 .logo-cult {
     font-family: var(--font-heading);
-    font-size: 1.3rem;
-    font-weight: 700;
+    font-size: 1.35rem;
+    font-weight: 800;
     color: #ffffff;
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
+    line-height: 1;
 }
 
 .nav {
@@ -747,6 +751,27 @@ h1, h2, h3, h4 {
     transform: translateX(4px);
 }
 
+.form-status {
+    margin: 14px 0 0;
+    padding: 12px 14px;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.form-status.error {
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    color: #fecaca;
+}
+
+.form-status.success {
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: #bbf7d0;
+}
+
 /* ==========================================================================
    Location & Map Section
    ========================================================================== */
@@ -899,6 +924,15 @@ h1, h2, h3, h4 {
 .footer-copy {
     color: var(--text-muted);
     font-size: 0.9rem;
+}
+
+.footer-credit {
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
 /* ==========================================================================
