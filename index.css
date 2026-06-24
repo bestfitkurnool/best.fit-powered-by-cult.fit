@@ -1,15 +1,32 @@
 :root {
-    --bg-primary: #07080a;
-    --bg-secondary: #101217;
-    --bg-tertiary: #171a21;
-    --text-primary: #ffffff;
+    /* cult.fit Brand Colors */
+    --brand-pink: #FF0099;
+    --brand-cyan: #00D4FF;
+    --brand-yellow: #FFE600;
+    --brand-black: #0a0b0d;
+    --brand-white: #FFFFFF;
+    
+    /* Background Colors */
+    --bg-primary: var(--brand-black);
+    --bg-secondary: var(--brand-black);
+    --bg-tertiary: var(--brand-black);
+    
+    /* Text Colors */
+    --text-primary: var(--brand-white);
     --text-secondary: #c5ceda;
     --text-muted: #7d8794;
-    --accent-orange: #ff6a1a;
-    --accent-pink: #ef2f77;
-    --accent-cyan: #24c7e8;
-    --accent-yellow: #ffd336;
-    --accent-gradient: linear-gradient(135deg, #ff6a1a 0%, #ef2f77 100%);
+    
+    /* Brand Accent Colors */
+    --accent-orange: var(--brand-pink);
+    --accent-pink: var(--brand-pink);
+    --accent-cyan: var(--brand-cyan);
+    --accent-yellow: var(--brand-yellow);
+    
+    /* Gradients */
+    --accent-gradient: linear-gradient(135deg, var(--brand-pink) 0%, var(--brand-cyan) 100%);
+    --progress-gradient: linear-gradient(90deg, var(--brand-pink) 0%, var(--brand-cyan) 100%);
+    
+    /* Semantic Colors */
     --border: rgba(255, 255, 255, 0.1);
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
@@ -87,7 +104,7 @@ button, input, select {
 }
 
 .eyebrow {
-    color: var(--accent-orange);
+    color: var(--brand-yellow);
     font-family: var(--font-heading);
     font-size: 0.82rem;
     font-weight: 800;
@@ -117,14 +134,14 @@ button, input, select {
 
 .btn-primary {
     background: var(--accent-gradient);
-    box-shadow: 0 14px 30px rgba(239, 47, 119, 0.28);
-    color: #ffffff;
+    box-shadow: 0 14px 30px rgba(255, 0, 153, 0.28);
+    color: var(--brand-white);
 }
 
 .btn-secondary {
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
+    color: var(--brand-white);
 }
 
 .btn-sm {
@@ -145,7 +162,7 @@ button, input, select {
 }
 
 .header {
-    background: rgba(7, 8, 10, 0.82);
+    background: rgba(10, 11, 13, 0.82);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(16px);
     left: 0;
@@ -173,7 +190,7 @@ button, input, select {
 }
 
 .best-wordmark {
-    color: #ffffff;
+    color: var(--brand-white);
     font-family: var(--font-heading);
     font-size: 1.8rem;
     font-weight: 900;
@@ -182,7 +199,7 @@ button, input, select {
 }
 
 .best-wordmark span {
-    color: var(--accent-orange);
+    color: var(--brand-pink);
 }
 
 .best-wordmark.large {
@@ -207,7 +224,7 @@ button, input, select {
 }
 
 .powered-lockup strong {
-    color: #ffffff;
+    color: var(--brand-white);
     font-family: var(--font-heading);
     font-size: 1.25rem;
     line-height: 1;
@@ -260,8 +277,8 @@ button, input, select {
 
 .hero-overlay {
     background:
-        linear-gradient(90deg, rgba(7, 8, 10, 0.96) 0%, rgba(7, 8, 10, 0.82) 42%, rgba(7, 8, 10, 0.42) 100%),
-        linear-gradient(180deg, rgba(7, 8, 10, 0.1) 0%, rgba(7, 8, 10, 0.96) 100%);
+        linear-gradient(90deg, rgba(10, 11, 13, 0.96) 0%, rgba(10, 11, 13, 0.82) 42%, rgba(10, 11, 13, 0.42) 100%),
+        linear-gradient(180deg, rgba(10, 11, 13, 0.1) 0%, rgba(10, 11, 13, 0.96) 100%);
     inset: 0;
     position: absolute;
 }
@@ -344,7 +361,7 @@ button, input, select {
 }
 
 .offer-kicker {
-    color: var(--accent-cyan);
+    color: var(--brand-yellow);
     font-family: var(--font-heading);
     font-size: 0.82rem;
     font-weight: 900;
@@ -353,7 +370,7 @@ button, input, select {
 }
 
 .offer-panel h2 {
-    color: #ffffff;
+    color: var(--brand-white);
     font-family: var(--font-heading);
     font-size: 4.2rem;
     font-weight: 900;
@@ -374,7 +391,7 @@ button, input, select {
 }
 
 .slots-meter-fill {
-    background: var(--accent-gradient);
+    background: var(--progress-gradient);
     border-radius: inherit;
     height: 100%;
     width: 37%;
@@ -387,7 +404,7 @@ button, input, select {
 }
 
 .slots-count strong {
-    color: #ffffff;
+    color: var(--brand-white);
 }
 
 .countdown {
@@ -398,18 +415,20 @@ button, input, select {
 }
 
 .countdown div {
-    background: rgba(255, 255, 255, 0.07);
+    background: rgba(255, 0, 153, 0.08);
+    border: 1px solid rgba(255, 0, 153, 0.2);
     border-radius: var(--radius-sm);
     padding: 10px 6px;
     text-align: center;
 }
 
 .countdown strong {
-    color: #ffffff;
+    color: var(--brand-yellow);
     display: block;
     font-family: var(--font-heading);
     font-size: 1.45rem;
     line-height: 1;
+    font-weight: 900;
 }
 
 .countdown span {
@@ -438,7 +457,7 @@ button, input, select {
 }
 
 .program-card::before {
-    background: var(--accent-gradient);
+    background: var(--progress-gradient);
     content: '';
     height: 3px;
     left: 0;
@@ -449,10 +468,10 @@ button, input, select {
 
 .program-card span {
     align-items: center;
-    background: rgba(255, 106, 26, 0.13);
-    border: 1px solid rgba(255, 106, 26, 0.28);
+    background: rgba(255, 0, 153, 0.13);
+    border: 1px solid rgba(255, 0, 153, 0.28);
     border-radius: 12px;
-    color: #ffffff;
+    color: var(--brand-white);
     display: flex;
     font-family: var(--font-heading);
     font-weight: 900;
@@ -506,8 +525,8 @@ button, input, select {
 
 .register {
     background:
-        radial-gradient(circle at 10% 20%, rgba(36, 199, 232, 0.12), transparent 32%),
-        radial-gradient(circle at 92% 80%, rgba(239, 47, 119, 0.18), transparent 34%),
+        radial-gradient(circle at 10% 20%, rgba(255, 0, 153, 0.12), transparent 32%),
+        radial-gradient(circle at 92% 80%, rgba(0, 212, 255, 0.12), transparent 34%),
         var(--bg-primary);
 }
 
@@ -534,7 +553,7 @@ button, input, select {
 }
 
 .form-group label {
-    color: #ffffff;
+    color: var(--brand-white);
     display: block;
     font-family: var(--font-heading);
     font-size: 0.88rem;
@@ -545,10 +564,10 @@ button, input, select {
 
 .form-group input,
 .form-group select {
-    background: #090b0f;
+    background: #0a0b0d;
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: var(--radius-sm);
-    color: #ffffff;
+    color: var(--brand-white);
     min-height: 54px;
     outline: none;
     padding: 0 16px;
@@ -557,8 +576,8 @@ button, input, select {
 
 .form-group input:focus,
 .form-group select:focus {
-    border-color: var(--accent-orange);
-    box-shadow: 0 0 0 4px rgba(255, 106, 26, 0.14);
+    border-color: var(--brand-pink);
+    box-shadow: 0 0 0 4px rgba(255, 0, 153, 0.14);
 }
 
 .phone-input-wrapper {
@@ -664,7 +683,7 @@ button, input, select {
 }
 
 .hours-block strong {
-    color: #ffffff;
+    color: var(--brand-white);
     white-space: nowrap;
 }
 
@@ -728,7 +747,7 @@ button, input, select {
 }
 
 .footer-credit {
-    color: #ffffff !important;
+    color: var(--brand-white) !important;
     font-family: var(--font-heading);
     font-weight: 900;
     letter-spacing: 0.06em;
@@ -737,12 +756,12 @@ button, input, select {
 
 .whatsapp-float {
     align-items: center;
-    background: #25d366;
-    border: 3px solid #ffffff;
+    background: var(--brand-pink);
+    border: 3px solid var(--brand-white);
     border-radius: 50%;
     bottom: 22px;
-    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
-    color: #06100a;
+    box-shadow: 0 18px 36px rgba(255, 0, 153, 0.35);
+    color: var(--brand-white);
     display: flex;
     font-family: var(--font-heading);
     font-weight: 900;
@@ -756,7 +775,7 @@ button, input, select {
 
 .modal-overlay {
     align-items: center;
-    background: rgba(7, 8, 10, 0.86);
+    background: rgba(10, 11, 13, 0.86);
     backdrop-filter: blur(10px);
     display: flex;
     height: 100%;
@@ -789,9 +808,9 @@ button, input, select {
 
 .modal-icon {
     align-items: center;
-    background: rgba(16, 185, 129, 0.12);
+    background: rgba(255, 0, 153, 0.12);
     border-radius: 50%;
-    color: #10b981;
+    color: var(--brand-pink);
     display: flex;
     height: 72px;
     justify-content: center;
@@ -911,10 +930,8 @@ button, input, select {
 
     .hero-overlay {
         background:
-            linear-gradient(90deg, rgba(7, 8, 10, 0.95), rgba(7, 8, 10, 0.76)),
-            linear-gradient(180deg, rgba(7, 8, 10, 0.15), rgba(7, 8, 10, 0.98));
-    }
-
+        linear-gradient(90deg, rgba(10, 11, 13, 0.95), rgba(10, 11, 13, 0.76)),
+        linear-gradient(180deg, rgba(10, 11, 13, 0.15), rgba(10, 11, 13, 0.98));
     .hero-logos {
         margin-bottom: 24px;
     }
