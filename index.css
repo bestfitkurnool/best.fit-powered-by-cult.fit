@@ -1,39 +1,130 @@
 :root {
-    /* cult.fit Brand Colors */
-    --brand-pink: #FF0099;
+    /* cult.fit Premium Brand Colors */
     --brand-cyan: #00D4FF;
-    --brand-yellow: #FFE600;
+    --brand-purple: #7C3AED;
+    --brand-gold: #FBBF24;
     --brand-black: #0a0b0d;
     --brand-white: #FFFFFF;
     
     /* Background Colors */
     --bg-primary: var(--brand-black);
-    --bg-secondary: var(--brand-black);
-    --bg-tertiary: var(--brand-black);
+    --bg-secondary: #111318;
+    --bg-tertiary: #1a1f2e;
     
     /* Text Colors */
     --text-primary: var(--brand-white);
-    --text-secondary: #c5ceda;
-    --text-muted: #7d8794;
+    --text-secondary: #e0e7ff;
+    --text-muted: #9ca3af;
     
     /* Brand Accent Colors */
-    --accent-orange: var(--brand-pink);
-    --accent-pink: var(--brand-pink);
     --accent-cyan: var(--brand-cyan);
-    --accent-yellow: var(--brand-yellow);
+    --accent-purple: var(--brand-purple);
+    --accent-gold: var(--brand-gold);
     
     /* Gradients */
-    --accent-gradient: linear-gradient(135deg, var(--brand-pink) 0%, var(--brand-cyan) 100%);
-    --progress-gradient: linear-gradient(90deg, var(--brand-pink) 0%, var(--brand-cyan) 100%);
+    --accent-gradient: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-purple) 100%);
+    --gradient-glow: radial-gradient(circle at center, rgba(0, 212, 255, 0.3), transparent 70%);
+    --progress-gradient: linear-gradient(90deg, var(--brand-cyan) 0%, var(--brand-purple) 100%);
     
     /* Semantic Colors */
-    --border: rgba(255, 255, 255, 0.1);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-accent: rgba(0, 212, 255, 0.2);
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
     --radius-sm: 8px;
     --radius-md: 14px;
     --radius-lg: 22px;
     --container: 1180px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.4), 0 0 40px rgba(124, 58, 237, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(0, 212, 255, 0.6), 0 0 60px rgba(124, 58, 237, 0.3);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+@keyframes countdownPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 * {
@@ -104,13 +195,14 @@ button, input, select {
 }
 
 .eyebrow {
-    color: var(--brand-yellow);
+    color: var(--brand-gold);
     font-family: var(--font-heading);
     font-size: 0.82rem;
     font-weight: 800;
     letter-spacing: 0.14em;
     margin-bottom: 14px;
     text-transform: uppercase;
+    animation: fadeInDown 0.8s ease-out;
 }
 
 .btn {
@@ -124,24 +216,55 @@ button, input, select {
     justify-content: center;
     line-height: 1;
     min-height: 48px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
     white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.5s ease;
+    z-index: 0;
+}
+
+.btn:hover::before {
+    left: 100%;
 }
 
 .btn:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.02);
 }
 
 .btn-primary {
     background: var(--accent-gradient);
-    box-shadow: 0 14px 30px rgba(255, 0, 153, 0.28);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.3), 0 14px 30px rgba(124, 58, 237, 0.2);
     color: var(--brand-white);
+    position: relative;
+    z-index: 1;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 50px rgba(0, 212, 255, 0.5), 0 20px 40px rgba(124, 58, 237, 0.3);
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 212, 255, 0.08);
+    border: 1px solid rgba(0, 212, 255, 0.3);
     color: var(--brand-white);
+    transition: all 0.35s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 212, 255, 0.15);
+    border-color: rgba(0, 212, 255, 0.6);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
 }
 
 .btn-sm {
@@ -162,14 +285,15 @@ button, input, select {
 }
 
 .header {
-    background: rgba(10, 11, 13, 0.82);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(16px);
+    background: rgba(10, 11, 13, 0.7);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+    backdrop-filter: blur(20px);
     left: 0;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 100;
+    transition: all 0.3s ease;
 }
 
 .header-container {
@@ -196,10 +320,17 @@ button, input, select {
     font-weight: 900;
     letter-spacing: 0;
     line-height: 1;
+    background: linear-gradient(135deg, var(--brand-white) 0%, var(--brand-cyan) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .best-wordmark span {
-    color: var(--brand-pink);
+    background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-purple) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .best-wordmark.large {
@@ -246,6 +377,32 @@ button, input, select {
     width: 34px;
 }
 
+.cult-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInDown 0.8s ease-out 0.3s both;
+}
+
+.cult-logo {
+    height: 60px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.3));
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hero-logos .cult-logo {
+    height: 80px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.cult-logo:hover {
+    filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.6)) brightness(1.1);
+    transform: scale(1.05);
+}
+
 .nav {
     align-items: center;
     display: flex;
@@ -264,6 +421,7 @@ button, input, select {
     overflow: hidden;
     padding: 150px 0 70px;
     position: relative;
+    animation: fadeInUp 1s ease-out;
 }
 
 .hero-media {
@@ -278,7 +436,8 @@ button, input, select {
 .hero-overlay {
     background:
         linear-gradient(90deg, rgba(10, 11, 13, 0.96) 0%, rgba(10, 11, 13, 0.82) 42%, rgba(10, 11, 13, 0.42) 100%),
-        linear-gradient(180deg, rgba(10, 11, 13, 0.1) 0%, rgba(10, 11, 13, 0.96) 100%);
+        linear-gradient(180deg, rgba(10, 11, 13, 0.1) 0%, rgba(10, 11, 13, 0.96) 100%),
+        radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.08), transparent 50%);
     inset: 0;
     position: absolute;
 }
@@ -311,6 +470,11 @@ button, input, select {
     letter-spacing: 0;
     line-height: 1.03;
     max-width: 760px;
+    animation: slideInLeft 0.8s ease-out;
+    background: linear-gradient(135deg, var(--brand-white) 0%, var(--brand-cyan) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero-subtitle {
@@ -349,24 +513,38 @@ button, input, select {
 .proof-list article,
 .register-form-wrapper,
 .location-card {
-    background: rgba(16, 18, 23, 0.82);
-    border: 1px solid var(--border);
+    background: rgba(17, 19, 24, 0.6);
+    border: 1px solid var(--border-accent);
     border-radius: var(--radius-lg);
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+}
+
+.offer-panel:hover,
+.program-card:hover,
+.proof-list article:hover,
+.register-form-wrapper:hover,
+.location-card:hover {
+    border-color: rgba(0, 212, 255, 0.4);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.1), 0 24px 60px rgba(0, 0, 0, 0.28);
+    transform: translateY(-5px);
 }
 
 .offer-panel {
-    backdrop-filter: blur(18px);
+    backdrop-filter: blur(20px);
     padding: 30px;
+    animation: slideInRight 0.8s ease-out 0.2s both;
 }
 
 .offer-kicker {
-    color: var(--brand-yellow);
+    color: var(--brand-gold);
     font-family: var(--font-heading);
     font-size: 0.82rem;
     font-weight: 900;
     letter-spacing: 0.12em;
     text-transform: uppercase;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .offer-panel h2 {
@@ -395,6 +573,8 @@ button, input, select {
     border-radius: inherit;
     height: 100%;
     width: 37%;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+    animation: glow 2s ease-in-out infinite;
 }
 
 .slots-count {
@@ -415,20 +595,28 @@ button, input, select {
 }
 
 .countdown div {
-    background: rgba(255, 0, 153, 0.08);
-    border: 1px solid rgba(255, 0, 153, 0.2);
+    background: rgba(0, 212, 255, 0.08);
+    border: 1px solid rgba(0, 212, 255, 0.3);
     border-radius: var(--radius-sm);
     padding: 10px 6px;
     text-align: center;
+    transition: all 0.3s ease;
+}
+
+.countdown div:hover {
+    background: rgba(0, 212, 255, 0.15);
+    border-color: rgba(0, 212, 255, 0.6);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
 }
 
 .countdown strong {
-    color: var(--brand-yellow);
+    color: var(--brand-cyan);
     display: block;
     font-family: var(--font-heading);
     font-size: 1.45rem;
     line-height: 1;
     font-weight: 900;
+    animation: countdownPulse 2s ease-in-out infinite;
 }
 
 .countdown span {
@@ -464,14 +652,15 @@ button, input, select {
     position: absolute;
     top: 0;
     width: 100%;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
 }
 
 .program-card span {
     align-items: center;
-    background: rgba(255, 0, 153, 0.13);
-    border: 1px solid rgba(255, 0, 153, 0.28);
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid rgba(0, 212, 255, 0.3);
     border-radius: 12px;
-    color: var(--brand-white);
+    color: var(--brand-cyan);
     display: flex;
     font-family: var(--font-heading);
     font-weight: 900;
@@ -479,6 +668,15 @@ button, input, select {
     justify-content: center;
     margin-bottom: 22px;
     width: 46px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+}
+
+.program-card:hover span {
+    background: rgba(0, 212, 255, 0.2);
+    border-color: rgba(0, 212, 255, 0.6);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    transform: scale(1.1);
 }
 
 .program-card h3 {
@@ -525,7 +723,7 @@ button, input, select {
 
 .register {
     background:
-        radial-gradient(circle at 10% 20%, rgba(255, 0, 153, 0.12), transparent 32%),
+        radial-gradient(circle at 10% 20%, rgba(124, 58, 237, 0.12), transparent 32%),
         radial-gradient(circle at 92% 80%, rgba(0, 212, 255, 0.12), transparent 34%),
         var(--bg-primary);
 }
@@ -576,8 +774,9 @@ button, input, select {
 
 .form-group input:focus,
 .form-group select:focus {
-    border-color: var(--brand-pink);
-    box-shadow: 0 0 0 4px rgba(255, 0, 153, 0.14);
+    border-color: var(--brand-cyan);
+    box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.15);
+    transition: all 0.3s ease;
 }
 
 .phone-input-wrapper {
@@ -756,11 +955,11 @@ button, input, select {
 
 .whatsapp-float {
     align-items: center;
-    background: var(--brand-pink);
+    background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-purple) 100%);
     border: 3px solid var(--brand-white);
     border-radius: 50%;
     bottom: 22px;
-    box-shadow: 0 18px 36px rgba(255, 0, 153, 0.35);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.4), 0 18px 36px rgba(0, 212, 255, 0.2);
     color: var(--brand-white);
     display: flex;
     font-family: var(--font-heading);
@@ -771,6 +970,13 @@ button, input, select {
     right: 22px;
     width: 58px;
     z-index: 99;
+    transition: all 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.6), 0 20px 40px rgba(124, 58, 237, 0.3);
 }
 
 .modal-overlay {
@@ -798,24 +1004,29 @@ button, input, select {
 
 .modal-content {
     background: var(--bg-secondary);
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-accent);
     border-radius: var(--radius-lg);
     max-width: 500px;
     padding: 36px;
     text-align: center;
     width: 100%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.1);
+    animation: fadeInUp 0.5s ease-out;
 }
 
 .modal-icon {
     align-items: center;
-    background: rgba(255, 0, 153, 0.12);
+    background: rgba(0, 212, 255, 0.12);
     border-radius: 50%;
-    color: var(--brand-pink);
+    color: var(--brand-cyan);
     display: flex;
     height: 72px;
     justify-content: center;
     margin: 0 auto 22px;
     width: 72px;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+    animation: pulse 2s ease-in-out infinite;
 }
 
 .modal-icon svg {
@@ -930,8 +1141,10 @@ button, input, select {
 
     .hero-overlay {
         background:
-        linear-gradient(90deg, rgba(10, 11, 13, 0.95), rgba(10, 11, 13, 0.76)),
-        linear-gradient(180deg, rgba(10, 11, 13, 0.15), rgba(10, 11, 13, 0.98));
+            linear-gradient(90deg, rgba(10, 11, 13, 0.95), rgba(10, 11, 13, 0.76)),
+            linear-gradient(180deg, rgba(10, 11, 13, 0.15), rgba(10, 11, 13, 0.98));
+    }
+
     .hero-logos {
         margin-bottom: 24px;
     }

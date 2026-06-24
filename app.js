@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const difference = countdownTarget.getTime() - now;
 
         if (difference <= 0) {
-            document.getElementById('countdown').innerHTML = "<p style='font-size: 1.5rem; font-weight: 700; color: var(--brand-yellow);'>WE ARE NOW OPEN!</p>";
+            document.getElementById('countdown').innerHTML = "<p style='font-size: 1.5rem; font-weight: 700; color: var(--brand-cyan);'>WE ARE NOW OPEN!</p>";
             return;
         }
 
